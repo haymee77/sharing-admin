@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Divider, Drawer } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ImageIcon from '@material-ui/icons/Image';
@@ -54,6 +55,11 @@ const Sidebar = props => {
       icon: <PeopleIcon />
     },
     {
+      title: '예약내역',
+      href: '/bookings',
+      icon: <LibraryBooksIcon />
+    },
+    {
       title: 'Products',
       href: '/products',
       icon: <ShoppingBasketIcon />
@@ -91,18 +97,11 @@ const Sidebar = props => {
       classes={{ paper: classes.drawer }}
       onClose={onClose}
       open={open}
-      variant={variant}
-    >
-      <div
-        {...rest}
-        className={clsx(classes.root, className)}
-      >
+      variant={variant}>
+      <div {...rest} className={clsx(classes.root, className)}>
         <Profile />
         <Divider className={classes.divider} />
-        <SidebarNav
-          className={classes.nav}
-          pages={pages}
-        />
+        <SidebarNav className={classes.nav} pages={pages} />
         <UpgradePlan />
       </div>
     </Drawer>

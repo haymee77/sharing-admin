@@ -8,6 +8,7 @@ import {
   Dashboard as DashboardView,
   ProductList as ProductListView,
   UserList as UserListView,
+  BookingList as BookingListView,
   Typography as TypographyView,
   Icons as IconsView,
   Account as AccountView,
@@ -20,11 +21,7 @@ import {
 const Routes = () => {
   return (
     <Switch>
-      <Redirect
-        exact
-        from="/"
-        to="/dashboard"
-      />
+      <Redirect exact from="/" to="/dashboard" />
       <RouteWithLayout
         component={DashboardView}
         exact
@@ -36,6 +33,12 @@ const Routes = () => {
         exact
         layout={MainLayout}
         path="/users"
+      />
+      <RouteWithLayout
+        component={BookingListView}
+        exact
+        layout={MainLayout}
+        path="/bookings"
       />
       <RouteWithLayout
         component={ProductListView}
